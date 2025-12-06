@@ -1,0 +1,114 @@
+@use '../mixins';
+@use '../variables';
+
+.start-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+
+  &.hidden {
+    display: none;
+  }
+
+  &__title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: variables.$primary-color;
+
+    @include mixins.for-phone-only {
+      font-size: 2rem;
+    }
+  }
+
+  &__author {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+
+    a {
+      color: variables.$secondary-color;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__modes {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    @include mixins.for-phone-only {
+      flex-direction: column;
+    }
+  }
+
+  &__mode-button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: variables.$primary-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: variables.$secondary-color;
+    }
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+
+  &__continue-button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: variables.$accent-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s;
+
+    &:hover:not(:disabled) {
+      background-color: mixins.darken-color(variables.$accent-color, 10%);
+    }
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  &__settings-button,
+  &__results-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    background-color: transparent;
+    color: variables.$primary-color;
+    border: 1px solid variables.$primary-color;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: variables.$primary-color;
+      color: white;
+    }
+  }
+}

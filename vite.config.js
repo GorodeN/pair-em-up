@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/GorodeN/pair-em-up/',
+  base: './',
   root: '.',
   build: {
     outDir: 'dist',

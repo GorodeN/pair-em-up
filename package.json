@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "deploy": "gh-pages -d dist -b gh-pages -r https://github.com/GorodeN/pair-em-up.git",
+    "deploy": "gh-pages -d dist -b gh-pages",
     "preview": "vite preview",
     "lint": "eslint src/**/*.{js,html}",
     "lint:fix": "eslint src/**/*.{js,html} --fix",
